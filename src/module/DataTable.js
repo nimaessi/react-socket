@@ -2,7 +2,7 @@ import React from 'react';
 import Table from 'react-bootstrap/Table';
 import { useSelector } from 'react-redux';
 import { selectNetwork } from '../features/network/networkSlice';
-
+import { v4 as uuidv4 } from 'uuid';
 
 const DataTable = () => {
     
@@ -28,18 +28,18 @@ const DataTable = () => {
             {
             network.networkValue.map((item,index) => {
                 return(
-                    <tr>
+                    <tr key = {uuidv4()}>
                         <td key = {index}>{index+1}</td>
-                        <td>{item.topic}</td>
-                        <td>{item.time}</td>
-                        <td>{item.content.implName}</td>
-                        <td>{item.content.blockNum}</td>  
-                        <td>{item.content.blockTime}</td>  
-                        <td>{item.content.bootTime}</td>  
-                        <td>{item.content.count_account}</td>
-                        <td>{item.content.eraLength}</td>
-                        <td>{item.content.networkNode}</td>
-                        <td>{item.content.maxPools}</td>    
+                        <td key = {uuidv4()}>{item.topic}</td>
+                        <td key = {uuidv4()}>{item.time}</td>
+                        <td key = {uuidv4()}>{item.content.implName}</td>
+                        <td key = {uuidv4()}>{item.content.blockNum}</td>  
+                        <td key = {uuidv4()}>{item.content.blockTime}</td>  
+                        <td key = {uuidv4()}>{item.content.bootTime}</td>  
+                        <td key = {uuidv4()}>{item.content.count_account}</td>
+                        <td key = {uuidv4()}>{item.content.eraLength}</td>
+                        <td key = {uuidv4()}>{item.content.networkNode}</td>
+                        <td key = {uuidv4()}>{item.content.maxPools}</td>    
                 </tr>
                 )
             })
